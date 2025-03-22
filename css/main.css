@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Linden+Hill:ital@0;1&family=Teko:wght@300..700&display=swap');
+    
+
+html {
+    /* 
+    * box-sizing
+    * default: 'box-sizing: content-box'
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing 
+    */
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body, a {
+    font-family: Teko, sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* mobile. Tamaño mínimo recomendado */
+    font-size: 25px;
+    line-height: 1.4em;
+}
+h1{
+    font-family: 'Teko', sans-serif;
+}
+
+h2, h3, h4, h5, h6, p {
+    font-family: 'Linden Hill', serif;
+}
+
+/* Laptop / Tablet */
+@media (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1024px) {
+    body {
+      font-size: 28px;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.14em;
+}
+
+header {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline;
+}
+
+a {
+    color: #3C3BF3;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.25em .5em;
+    text-transform: uppercase;
+    min-width: 42px;
+    transition: all 500ms ease-out; /* transision*/
+}
+
+a.active,
+a:hover {
+    transition: all 500ms ease-in; /* transision*/    background-color: #F2F2F2;
+    color: #3C3BF3;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+article {
+    width: 80%;
+    max-width: 800px;
+    padding: 1em;
+    margin: 0 auto; /* Centrar en 'x' de su elemento padre */
+}
+
+p {
+    max-width: 60ch; /* Ancho máximo basado en el ancho del carácter "0" */
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 1em;
+    width: 90%;
+    min-width: 290px;
+    max-width: 1200px;
+}
+
+nav.container {
+    padding: 1em;
+}
