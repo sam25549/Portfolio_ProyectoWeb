@@ -6,15 +6,15 @@
     <title>Portafolio</title>
         
         <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
-    <meta name="apple-mobile-web-app-title" content="HTML Starter" />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
+            <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+            <meta name="apple-mobile-web-app-title" content="HTML Starter" />
+            <link rel="manifest" href="./favicon/site.webmanifest" />
 
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Semantic HTML - Starter Markup">
-    <meta property="og:description" content="Un documento de inicio para crear páginas HTML semánticas con buenas prácticas. Incluye ejemplos y referencias.">
-    <meta property="og:url" content="https://juanfuent-es.github.io/html-starter/">
-    <meta property="og:type" content="website">
+            <!-- Open Graph Metadata -->
+                <meta property="og:title" content="Semantic HTML - Starter Markup">
+                <meta property="og:description" content="Un documento de inicio para crear páginas HTML semánticas con buenas prácticas. Incluye ejemplos y referencias.">
+                <meta property="og:url" content="https://juanfuent-es.github.io/html-starter/">
+                <meta property="og:type" content="website">
 
         <!-- favicon -->
     <!-- css imports -->
@@ -24,10 +24,11 @@
 <body>
    <header>
          <nav>
-            <a href="index.html">
+            <a href="index.html" id="Logo-header">
                 <img src="img/logo.svg" alt="Logo">
             </a>
-              <ul>
+            
+            <ul>
                 <li><a href="about/index.html" title="Get to know me">
                     About 
                 </a></li>
@@ -37,16 +38,50 @@
                 <li><a href="extra.html" title="Web Design Curiosity"> 
                     Extra 
                 </a></li>
-              </ul>
+            </ul>
          </nav>
    </header>
    <main>
+        <section>
+            <img src="img/sam.jpg" alt="Sam">
+            <h1>
+                Hi, I'm Sam
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit ullamcorper mus,
+                malesuada aptent tortor himenaeos sollicitudin quam mollis porta at, pulvinar montes euismod est turpis sagittis arcu penatibus.
+            </p>
 
+        </section>
    </main>
-   <section>
-    
+   <section id="update">
+        Updates
    </section>
    <footer>
+        <img src="img/centro-logo.svg" alt="Logo">
+        <section class="socials">
+            <a href="#">
+                <img src="#" alt="Github">
+            </a>
+            <a href="#">
+                <img src="#" alt="Instagram">
+            </a>
+            <a href="#">
+                <img src="#" alt="Behance">
+            </a>
+        </section>
+        <div class="contact">
+            <li>
+                <a href="#" title="mail">
+                    mail
+                </a>
+            </li>
+            <li>
+                <a href="#" title="phone">
+                    Phone
+                </a>
+            </li>
+        </div>
 
    </footer>
 </body>
