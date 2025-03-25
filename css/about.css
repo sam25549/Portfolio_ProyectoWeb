@@ -1,0 +1,40 @@
+/*------ ABOUT -------*/
+#about{
+    grid-template-areas:
+        "header  header header header header"
+        "img     img    name   name   name"
+        "int     int    int    int    int"
+        "who     who    who    who    who"
+        "mem     mem    mem    mem    mem"
+        "logo2   footer footer footer footer";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 30% auto auto auto 100px;
+    gap: 5px;
+}
+.sublinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.sublinks a {
+    color: var(--dark-c);
+    text-decoration: none;
+    text-align: center;
+    gap: 0.3rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.intereses{
+    grid-area: int;
+}
+.quien{
+    grid-area: who;
+}
+.recuerdos{
+    grid-area: mem;
+}

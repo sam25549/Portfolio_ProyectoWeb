@@ -344,17 +344,4 @@ footer {
     }
 }
 
-/*------ ABOUT -------*/
-#about{
-    grid-template-areas:
-        "header  header header header header"
-        "img     img    name   name   name"
-        "int     int    int    int    int"
-        "who     who    who    who    who"
-        "mem     mem    mem    mem    mem"
-        "logo2   footer footer footer footer";
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 10% 55% auto auto auto 100px;
-    gap: 5px;
-}
 
