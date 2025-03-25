@@ -3,105 +3,318 @@
 
 :root {
     --bg-color: #f1ede4;
-    --text-color: #e50030;
+    --red-c: #e50030;
+    --blue-c: #0c09b6;
 }
 
-
-html {
-    /* 
-    * box-sizing
-    * default: 'box-sizing: content-box'
-    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing 
-    */
+/* Reset default box sizing */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
+    scroll-behavior: smooth;
+    font-family: 'Source Code Pro', sans-serif;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
-}
-
-body{
-    font-family: Source Code Pro, sans-serif;
-    min-height: 100%;
+/* GRID LAYOUT */
+body {
+    padding-top: 10px;
     display: grid;
-    grid-template:
-        "header header header header header" 80px
-        "img img info info info" 50%
-        "up up up up up" auto
-        "footer footer footer footer footer" 10% 
-        / 1fr 1fr 1fr 1fr 1fr;
-    gap: 1px;
-    /* mobile. Tamaño mínimo recomendado */
-    font-size: 25px;
-    line-height: 1.4em;
+    grid-template-areas:
+        "header  header header header header"
+        "img   img   name   name   name"
+        "up    up     up     up     up"
+        "logo2 footer footer footer footer";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 55% auto 100px;
+    gap: 5px;
     background-color: var(--bg-color);
 }
 
-/* Laptop / Tablet */
-@media (min-width: 768px) {
-    body {
-        font-size: 20px;
-    }
+/* LOGO */
+[style*="grid-area: logo"],
+[style*="grid-area: logo2"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
 }
 
-/* Escritorio */
-@media (min-width: 1024px) {
-    body {
-      font-size: 28px;
-    }
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: Oxanium, sans-serif;
-    color: var(--text-color);
-    margin: 0;
-}
-/* Header style*/
+/* HEADER AREA */
 header {
     grid-area: header;
+    background-color: var(--bg-color);
     display: flex;
-    justify-content: center;
     align-items: center;
-    
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    padding: 1em;
-    border: #000000, solid, 3px;
-}
-
-header nav ul li {
-    display: flex;
     justify-content: space-between;
+    padding: 0.5rem 2rem;
+    border-bottom: 2px solid var(--red-c);
+    position: relative;
+}
+
+/* Brand / Logo */
+.logo-title {
+    display: flex;
     align-items: center;
-    flex-direction: row;
-}
-ul li {
-    display: inline;
-    margin: 0 1em;
+    gap: 0.75rem;
 }
 
-/* main style*/
+.brand {
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blue-c);
+}
+
+/* Navigation */
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: var(--blue-c);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background: var(--red-c);
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Burger menu hidden on desktop */
+#menu-toggle,
+.menu-icon {
+    display: none;
+}
+
+/* Burger icon styling */
+.menu-icon {
+    font-size: 2rem;
+    color: var(--blue-c);
+    cursor: pointer;
+}
+
+/* Mobile Nav Styling */
+@media (max-width: 768px) {
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--bg-color);
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #menu-toggle:checked ~ .main-nav {
+        max-height: 300px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 1.2rem;
+    }
+
+    #menu-toggle,
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+/* PROFILE IMAGE / SIDEBAR */
+[style*="grid-area: img"] {
+    grid-area: img;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* MAIN INFO */
 main {
-    grid-area: info;
-    border: #000000, solid, 3px;
-
+    grid-area: name;
+    padding: 2rem;
 }
 
-/*update style */
-#update{
+main h1 {
+    font-family: Oxanium, sans-serif;
+    font-size: 2.5rem;
+    color: var(--red-c);
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1rem;
+    color: #111;
+    line-height: 1.6;
+}
+
+/* UPDATES */
+#update {
     grid-area: up;
-    background-color: #dba21f;
-    border: #000000, solid, 3px;
-
+    background-color: var(--blue-c);
+    color: var(--bg-color);
+    padding: 1rem;
+    font-weight: bold;
+}
+/* Update effect */
+#update {
+    background: linear-gradient(-45deg, #001f3f, #0074D9, #7FDBFF, #001f3f);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
 }
 
-/*footer style*/
+
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+section h1 {
+    font-size: 2rem;
+    color: var(--blue-c);
+    margin-bottom: 1rem;
+}
+
 footer {
     grid-area: footer;
+    color: rgb(0, 5, 64);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-top: 3px solid var(--blue-c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+/* Inner wrapper */
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: aqua;
-    border: #000000, solid, 3px;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 
+/* Social media icons */
+.socials a i {
+    font-size: 1.8rem;
+    color: rgb(0, 5, 64);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.socials a:hover i {
+    color: var(--red-c);
+    transform: scale(1.2);
+}
+
+/* Contact links */
+.contact a {
+    color: rgb(0, 5, 64);
+    margin: 0 0.5rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact a:hover {
+    color: var(--red-c);
+    transform: translateY(-2px);
+}
+
+/* Bottom line */
+.footer-bottom {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+
+/* ICONS */
+i {
+    margin-right: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "logo"
+            "img"
+            "name"
+            "up"
+            "logo2"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+}
+
+.logo2 {
+    grid-area: logo2;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 30px;
 }

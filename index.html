@@ -6,7 +6,7 @@
     <title>Portafolio</title>
         
         <!-- favicon -->
-            <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+            <link rel="icon" type="image/svg+xml" href="img/Logo.svg" />
             <meta name="apple-mobile-web-app-title" content="HTML Starter" />
             <link rel="manifest" href="./favicon/site.webmanifest" />
 
@@ -20,30 +20,37 @@
     <!-- css imports -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <body>
-   <header>
-         <nav>
-            <a href="index.html" id="Logo-header">
-                <img src="img/logo.svg" alt="Logo">
-            </a>
-            
+    <header style="grid-area: header;">
+        <div class="logo-title">
+            <img src="img/Logo.jpg" alt="Logo" height="50">
+            <span class="brand">WinStar</span>
+        </div>
+    
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fa fa-bars"></i>
+        </label>
+    
+        <nav class="main-nav">
             <ul>
                 <li><a href="about/index.html" title="Get to know me">
-                    About 
+                    About
                 </a></li>
-                <li><a href="proyectos.html" title="My projects"> 
-                    Proyects 
+                <li><a href="proyectos.html" title="My projects">
+                    Projects
                 </a></li>
-                <li><a href="extra.html" title="Web Design Curiosity"> 
-                    Extra 
+                <li><a href="extra.html" title="Web Design Curiosity">
+                    Extra
                 </a></li>
             </ul>
-         </nav>
-   </header>
-   <main>
-        <section>
-            <img src="img/sam.jpg" alt="Sam">
+        </nav>
+    </header>
+
+   <main style="grid-area: name;">
             <h1>
                 Hi, I'm Sam
             </h1>
@@ -51,38 +58,56 @@
                 Lorem ipsum dolor sit amet consectetur adipiscing elit ullamcorper mus,
                 malesuada aptent tortor himenaeos sollicitudin quam mollis porta at, pulvinar montes euismod est turpis sagittis arcu penatibus.
             </p>
-
-        </section>
    </main>
-   <section id="update">
-        Updates
-   </section>
-   <footer>
-        <img src="img/centro-logo.svg" alt="Logo">
-        <section class="socials">
-            <a href="#">
-                <img src="#" alt="Github">
-            </a>
-            <a href="#">
-                <img src="#" alt="Instagram">
-            </a>
-            <a href="#">
-                <img src="#" alt="Behance">
-            </a>
-        </section>
-        <div class="contact">
-            <li>
-                <a href="#" title="mail">
-                    mail
-                </a>
-            </li>
-            <li>
-                <a href="#" title="phone">
-                    Phone
-                </a>
-            </li>
-        </div>
+    
+    <aside style="grid-area: img;">
+        <img src="img/Profile02.jpg" alt="Sam" class="profile-pic">
+    </aside>
 
-   </footer>
+   <section id="update" style="grid-area: up;">
+        <h1>
+            Updates
+        </h1> 
+        <p>
+            No updates yet... stay tuned!
+        </p>    
+   </section>
+    
+   <div style="grid-area: logo2;" style="border-top: 3px solid var(--blue-c);" class="logo2">
+        <img src="img/Logo.svg" alt="Logo" height="60%">
+    </div> 
+
+    <footer>
+        <div class="footer-content">
+          <div class="socials">
+            <a href="https://github.com/sam25549" target="_blank" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/sam.acruz/" target="_blank" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.behance.net/samantharellan4" target="_blank" title="Behance">
+              <i class="fab fa-behance"></i>
+            </a>
+          </div>
+      
+          <div class="contact">
+            <a href="mailto:samarellano31205@gmail.com">
+                <i class="fa fa-envelope"></i> 
+                Email
+            </a>
+            <a href="tel:+523310116620">
+                <i class="fa fa-phone"></i> 
+                Phone
+            </a>
+            <a href="https://wa.me/523310116620" target="_blank">
+                <i class="fa fa-whatsapp"></i> 
+                WhatsApp
+            </a>
+          </div>
+        </div>
+      
+      </footer>
+      
 </body>
 </html>
