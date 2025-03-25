@@ -5,13 +5,17 @@
     --bg-color: #f1ede4;
     --red-c: #e50030;
     --blue-c: #0c09b6;
+    --dark-c: rgb(0, 5, 64);
+    --negro-c: #111;
 }
 
-/* Reset default box sizing */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+i, a{
+    text-decoration: none;
 }
 
 html, body {
@@ -20,6 +24,7 @@ html, body {
     height: 100%;
     scroll-behavior: smooth;
     font-family: 'Source Code Pro', sans-serif;
+    background-color: var(--bg-color);
 }
 
 /* GRID LAYOUT */
@@ -28,25 +33,15 @@ body {
     display: grid;
     grid-template-areas:
         "header  header header header header"
-        "img   img   name   name   name"
-        "up    up     up     up     up"
-        "logo2 footer footer footer footer";
+        "img     img    name   name   name"
+        "up      up     up     up     up"
+        "logo2   footer footer footer footer";
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 10% 55% auto 100px;
     gap: 5px;
-    background-color: var(--bg-color);
 }
 
-/* LOGO */
-[style*="grid-area: logo"],
-[style*="grid-area: logo2"] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px;
-}
-
-/* HEADER AREA */
+/* ========== HEADER ========== */
 header {
     grid-area: header;
     background-color: var(--bg-color);
@@ -58,11 +53,14 @@ header {
     position: relative;
 }
 
-/* Brand / Logo */
 .logo-title {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+}
+
+.logo-title img {
+    height: 40px;
 }
 
 .brand {
@@ -70,9 +68,10 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--blue-c);
+    outline-style: none;
 }
 
-/* Navigation */
+/* NAVIGATION */
 .main-nav ul {
     display: flex;
     gap: 2rem;
@@ -105,21 +104,187 @@ header {
     width: 100%;
 }
 
-/* Burger menu hidden on desktop */
+/* MOBILE MENU */
 #menu-toggle,
 .menu-icon {
     display: none;
 }
 
-/* Burger icon styling */
 .menu-icon {
     font-size: 2rem;
     color: var(--blue-c);
     cursor: pointer;
 }
 
-/* Mobile Nav Styling */
+/*  MAIN SECTION */
+main {
+    grid-area: name;
+    padding: 2rem;
+    text-align: center;
+}
+
+main h1 {
+    font-family: Oxanium, sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--red-c);
+    margin-bottom: 1rem;
+}
+
+main p {
+    font-size: 1rem;
+    color: var(--negro-c);
+    line-height: 1.6;
+}
+
+/* IMAGE SECTION */
+[style*="grid-area: img"] {
+    grid-area: img;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* UPDATES */
+#update {
+    grid-area: up;
+    background: linear-gradient(-45deg, #001f3f, #0074D9, #7FDBFF, #001f3f);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+}
+
+@keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+section h1 {
+    font-size: 2rem;
+    color: var(--blue-c);
+    margin-bottom: 1rem;
+}
+
+/* LOGO2 */
+.logo2 {
+    grid-area: logo2;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 30px;
+    border-top: 3px solid var(--blue-c);
+}
+
+.logo2 img {
+    height: 40px;
+    max-width: 100%;
+}
+
+/*FOOTER */
+footer {
+    grid-area: footer;
+    color: var(--dark-c);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-top: 3px solid var(--blue-c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.socials a i {
+    font-size: 1.8rem;
+    color: var(--dark-c);
+    transition: transform 0.3s, color 0.3s;
+    
+}
+
+.socials{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.socials a:hover i {
+    color: var(--red-c);
+    transform: scale(1.2);
+}
+
+.contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact a {
+    color: var(--dark-c);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact a:hover {
+    color: var(--red-c);
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header  header header header header"
+            "img     img    name   name   name"
+            "up      up     up     up     up"
+            "footer  footer footer footer footer";
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 10% 50% auto 100px;
+    }
+}
+
 @media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "img"
+            "name"
+            "up"
+            "logo2"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    header {
+        flex-direction: row;
+        padding: 0.5rem 1rem;
+    }
+
     .main-nav {
         position: absolute;
         top: 100%;
@@ -128,7 +293,7 @@ header {
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.4s ease;
+        transition: max-height 0.4s ease-in-out;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
@@ -147,135 +312,7 @@ header {
     .menu-icon {
         display: block;
     }
-}
 
-
-/* PROFILE IMAGE / SIDEBAR */
-[style*="grid-area: img"] {
-    grid-area: img;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.profile-pic {
-    width: 400px;
-    height: auto;
-    object-fit: cover;
-}
-
-/* MAIN INFO */
-main {
-    grid-area: name;
-    padding: 2rem;
-}
-
-main h1 {
-    font-family: Oxanium, sans-serif;
-    font-size: 2.5rem;
-    color: var(--red-c);
-    margin-bottom: 1rem;
-}
-
-main p {
-    font-size: 1rem;
-    color: #111;
-    line-height: 1.6;
-}
-
-/* UPDATES */
-#update {
-    grid-area: up;
-    background-color: var(--blue-c);
-    color: var(--bg-color);
-    padding: 1rem;
-    font-weight: bold;
-}
-/* Update effect */
-#update {
-    background: linear-gradient(-45deg, #001f3f, #0074D9, #7FDBFF, #001f3f);
-    background-size: 400% 400%;
-    animation: gradientShift 10s ease infinite;
-    color: white;
-    padding: 1rem;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 8px;
-}
-
-
-@keyframes gradientShift {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-section h1 {
-    font-size: 2rem;
-    color: var(--blue-c);
-    margin-bottom: 1rem;
-}
-
-footer {
-    grid-area: footer;
-    color: rgb(0, 5, 64);
-    padding: 1.5rem 1rem;
-    text-align: center;
-    border-top: 3px solid var(--blue-c);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.95rem;
-}
-
-/* Inner wrapper */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 800px;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-/* Social media icons */
-.socials a i {
-    font-size: 1.8rem;
-    color: rgb(0, 5, 64);
-    transition: transform 0.3s, color 0.3s;
-}
-
-.socials a:hover i {
-    color: var(--red-c);
-    transform: scale(1.2);
-}
-
-/* Contact links */
-.contact a {
-    color: rgb(0, 5, 64);
-    margin: 0 0.5rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.contact a:hover {
-    color: var(--red-c);
-    transform: translateY(-2px);
-}
-
-/* Bottom line */
-.footer-bottom {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-
-/* Responsive layout */
-@media (max-width: 768px) {
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -283,38 +320,41 @@ footer {
 
     .contact {
         flex-direction: column;
-        gap: 0.5rem;
     }
 }
 
-
-/* ICONS */
-i {
-    margin-right: 1rem;
+.image-dark{
+    display: none;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    body {
-        grid-template-areas:
-            "header"
-            "logo"
-            "img"
-            "name"
-            "up"
-            "logo2"
-            "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000211;
+        --text-color: #f1ede4;
+        --dark-c: rgb(247, 250, 236);
+        --negro-c: #f1ede4;
     }
-    
+
+    .image-dark{
+        display: block;
+    }
+    .image-light{
+        display: none;
+    }
 }
 
-.logo2 {
-    grid-area: logo2;
-    background-color: var(--bg-color);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 30px;
+/*------ ABOUT -------*/
+#about{
+    grid-template-areas:
+        "header  header header header header"
+        "img     img    name   name   name"
+        "int     int    int    int    int"
+        "who     who    who    who    who"
+        "mem     mem    mem    mem    mem"
+        "logo2   footer footer footer footer";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 10% 55% auto auto auto 100px;
+    gap: 5px;
 }
+
