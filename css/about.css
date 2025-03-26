@@ -1,55 +1,128 @@
-/*------ ABOUT -------*/
-#about{
+/* GLOBAL GRID LAYOUT FOR #about */
+#about {
+    display: grid;
     grid-template-areas:
+      "header  header header header header"
+      "img     img    name   name   name"
+      "int     int    int    int    int"
+      "who     who    who    who    who"
+      "mem     mem    mem    mem    mem"
+      "logo2   footer footer footer footer";
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto auto auto auto 100px;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  /* GRID AREA CLASSES */
+  .grid-img { 
+    grid-area: img; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+  .grid-name { grid-area: name; }
+  .grid-int  { grid-area: int; }
+  .grid-who  { grid-area: who; }
+  .grid-mem  { grid-area: mem; }
+  
+  /* SECTION SPACING */
+  section {
+    padding: 1rem;
+    border-top: 1px solid var(--blue-c);
+  }
+  
+  /* IMAGE STYLE */
+  .my-fase-pic {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  /* ========== RESPONSIVE BREAKPOINTS ========== */
+  
+  /* ========== TABLET (≤1024px) ========== */
+  @media (max-width: 1024px) {
+    #about {
+      grid-template-areas:
         "header  header header header header"
         "img     img    name   name   name"
         "int     int    int    int    int"
         "who     who    who    who    who"
         "mem     mem    mem    mem    mem"
         "logo2   footer footer footer footer";
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 10% 30% auto auto auto 100px;
-    gap: 5px;
-}
-.sublinks{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-}
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto auto auto auto auto auto;
+    }
+  
+    .my-fase-pic {
+      max-width: 280px;
+    }
+  
+    main, section {
+      padding: 1rem 1.5rem;
+    }
+  }
+  
+  /* ========== MOBILE (≤768px) ========== */
+  @media (max-width: 768px) {
+    #about {
+      grid-template-areas:
+        "header"
+        "img"
+        "name"
+        "int"
+        "who"
+        "mem"
+        "logo2"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .grid-img,
+    .grid-name,
+    .grid-int,
+    .grid-who,
+    .grid-mem,
+    .logo2,
+    footer {
+      padding: 0 1rem;
+    }
+  
+    main h1 {
+      font-size: 2rem;
+    }
+  
+    .sublinks a p {
+      font-size: 1rem;
+      text-decoration: none;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+  
+    .socials {
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .contact {
+      flex-direction: column;
+    }
+  }
 
-.sublinks a {
-    color: var(--dark-c);
+  .sublinks a p {
+    font-size: 1.2rem;
     text-decoration: none;
-    text-align: center;
-    gap: 0.3rem;
-    
-}
+  }
 
-.sublinks a:hover {
+  .sublinks a p:hover {
     color: var(--red-c);
-    transform: translateY(-2px);
-    transition: color 0.3s, transform 0.3s;
-
-}
-
-.sublinks h1{
-    color: var(--blue-c);
-    text-align: center;
-    align-items: center;
-    font-size: 2rem;
-    margin: 0;
-}
-
-.intereses{
-    grid-area: int;
-}
-.quien{
-    grid-area: who;
-}
-.recuerdos{
-    grid-area: mem;
-}
+  }
+  

@@ -334,6 +334,7 @@ footer {
         --text-color: #f1ede4;
         --dark-c: rgb(247, 250, 236);
         --negro-c: #f1ede4;
+        --blue-c: #3834ff;
     }
 
     .image-dark{
@@ -345,3 +346,35 @@ footer {
 }
 
 
+  /* SPLASH SCREEN */
+  #splash-screen {
+    position: fixed;
+    z-index: 9999;
+    background: var(--bg-color);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: splashOut 3s forwards 2s;
+  }
+  
+  #splash-logo {
+    width: 150px;
+    animation: pulse 2s ease-in-out infinite;
+    background-color: var(--dark-c);
+    border-radius: 50%;
+    padding: 1rem;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
+  }
+  
+  @keyframes splashOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

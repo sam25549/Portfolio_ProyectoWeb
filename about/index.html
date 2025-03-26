@@ -1,163 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About</title>
 
-        <!-- favicon -->
-        <link rel="icon" type="image/svg+xml" href="img/Logo.svg" />
-        <meta name="apple-mobile-web-app-title" content="HTML Starter" />
-        <link rel="manifest" href="./favicon/site.webmanifest" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../img/Logo.svg" />
+  <meta name="apple-mobile-web-app-title" content="HTML Starter" />
+  <link rel="manifest" href="../favicon/site.webmanifest" />
 
-        <!-- Open Graph Metadata -->
-            <meta property="og:title" content="Index to me">
-            <meta property="og:description" content="Proyecto de portafolio personal en web">
-            <meta property="og:url" content="https://github.com/sam25549/Portfolio_ProyectoWeb">
-            <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Index to me">
+  <meta property="og:description" content="Proyecto de portafolio personal en web">
+  <meta property="og:url" content="https://github.com/sam25549/Portfolio_ProyectoWeb">
+  <meta property="og:type" content="website">
 
-    <!-- favicon -->
-    <!-- css imports -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/about.css">
-    
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/about.css">
 </head>
+
 <body id="about">
-
-    <!-- HEADER -->
-    <header>
-        <div class="logo-title">
-            <a href="../index.html" title="Main Menu">
-                <img src="..img/Logo.svg" alt="Logo" height="60%" class="image-light">
-                <img src="..img/Logo_dark.jpg" alt="Logo" height="60%" class="image-dark">
-                <span class="brand">WinStar</span>
-            </a>
-        </div>
-
-        <!-- Mobile Menu Toggle -->
-        <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">
-            <i class="fa fa-bars"></i>
-        </label>
-
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" title="Get to know me">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <aside style="grid-area: img;">
-        <img src="..img/photo.jpg" alt="Sam" class="my-fase-pic" >
-    </aside>
-   
-    <!-- MAIN INTRO SECTION -->
-    <main style="grid-area: name;">
-        <h1>
-            Samantha Arellano Cruz
-        </h1>
-        <p>Hola! Soy Sam, una persona creativa con múltiples intereses. Esta página te muestra un poco más de quién soy.</p>
-    </main>
-
-    <!-- INTERESES SECTION -->
-    <section class="sublinks intereses" style="grid-area: int;">
-        <h1>Intereses</h1>
-        <ul>
-            <li><a href="../404.html">
-                <p>
-                    Música
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Arte
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Tecnología
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Cine
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Baile
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Cultura Mexicanas
-                </p>
-            </a></li>
-        </ul>
-    </section>
-
-    <section class="sublinks quien" style="grid-area: who;">
-        <h1>¿Quién soy?</h1>
-        <ul>
-            <li><a href="../404.html">
-                <p>
-                    Familia
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Amigos
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Yo misma
-                </p>
-            </a></li>
-        </ul>
-    </section>
-
-    <section class="sublinks recuerdos" style="grid-area: mem;">
-        <h1>Fortalezas / Recuerdos</h1>
-        <ul>
-            <li><a href="../404.html">
-                <p>
-                    STUCO
-                </p>
-            </a></li>
-            <li><a href="../404.html">
-                <p>
-                    Independencia
-                </p>
-            </a></li>
-        </ul>
-    </section>
-
-    <!-- LOGO FOOTER -->
-    <div class="logo2" style="grid-area: logo2;">
-        <img src="../img/Logo.svg" alt="Logo" height="60%" class="image-light">
-        <img src="../img/Logo_dark.jpg" alt="Logo" height="60%" class="image-dark">
+  <!-- HEADER -->
+  <header>
+    <div class="logo-title">
+      <a href="../index.html" title="Main Menu">
+        <img src="../img/Logo.svg" alt="Logo" class="image-light" />
+        <img src="../img/Logo_dark.jpg" alt="Logo" class="image-dark" />
+        <span class="brand">WinStar</span>
+      </a>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="socials">
-                <a href="https://github.com/sam25549" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/sam.acruz/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.behance.net/samantharellan4" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-            </div>
+    <!-- Mobile Menu Toggle -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fa fa-bars"></i>
+    </label>
 
-            <div class="contact">
-                <a href="mailto:samarellano31205@gmail.com"><i class="fa fa-envelope"></i>Email</a>
-                <a href="tel:+523310116620"><i class="fa fa-phone"></i>Phone</a>
-                <a href="https://wa.me/523310116620" target="_blank"><i class="fa fa-whatsapp"></i>WhatsApp</a>
-            </div>
-        </div>
-    </footer>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" title="Get to know me">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <!-- IMAGE -->
+  <aside class="grid-img">
+    <img src="../img/photo.jpg" alt="Sam" class="my-fase-pic" />
+  </aside>
+
+  <!-- INTRO -->
+  <main class="grid-name">
+    <h1>Samantha Arellano Cruz</h1>
+    <p>Hi! I'm Sam, a creative person with multiple interests. This page shows you a little more about who I am.</p>
+  </main>
+
+  <!-- INTERESES -->
+  <section class="sublinks grid-int">
+    <h1>Interests</h1>
+    <ul>
+      <li><a href="../404.html"><p>Music</p></a></li>
+      <li><a href="../404.html"><p>Art</p></a></li>
+      <li><a href="../404.html"><p>Technology</p></a></li>
+      <li><a href="../404.html"><p>Film</p></a></li>
+      <li><a href="../404.html"><p>Dancing</p></a></li>
+      <li><a href="../404.html"><p>Mexican Culture</p></a></li>
+    </ul>
+  </section>
+
+  <!-- QUIÉN SOY -->
+  <section class="sublinks grid-who">
+    <h1>¿Who am I?</h1>
+    <ul>
+      <li><a href="../404.html"><p>Family</p></a></li>
+      <li><a href="../404.html"><p>Friends</p></a></li>
+      <li><a href="../404.html"><p>Myself</p></a></li>
+    </ul>
+  </section>
+
+  <!-- FORTALEZAS -->
+  <section class="sublinks grid-mem">
+    <h1>Strengths / Memories</h1>
+    <ul>
+      <li><a href="../404.html"><p>STUCO</p></a></li>
+      <li><a href="../404.html"><p>Independence</p></a></li>
+    </ul>
+  </section>
+
+  <!-- LOGO FOOTER -->
+  <div class="logo2">
+    <img src="../img/Logo.svg" alt="Logo" class="image-light" />
+    <img src="../img/Logo_dark.jpg" alt="Logo" class="image-dark" />
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="socials">
+        <a href="https://github.com/sam25549" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/sam.acruz/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.behance.net/samantharellan4" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+      </div>
+      <div class="contact">
+        <a href="mailto:samarellano31205@gmail.com"><i class="fa fa-envelope"></i>Email</a>
+        <a href="tel:+523310116620"><i class="fa fa-phone"></i>Phone</a>
+        <a href="https://wa.me/523310116620" target="_blank"><i class="fa fa-whatsapp"></i>WhatsApp</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
